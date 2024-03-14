@@ -11,13 +11,18 @@ configuration {
 @theme "/dev/null"
 
 * {
+    color1: #BF4594;
+    color2: #F079f2;
+    moradito: #2E2259;
+    azul-fuerte: rgba(15, 10, 42, 0.02);
+    amarillo: #F2CB9B;
     bg:#11121D;
     bg-alt: #444b6a;
 
     fg: #ffffff;
     fg-alt: #787c99;
 
-    background-color: @bg;
+    background-color: @azul-fuerte;
 
     border: 0;
     margin: 0;
@@ -49,7 +54,7 @@ element-icon {
 }
 
 entry {
-    background-color: @bg-alt;
+    background-color: @moradito;
     text-color:@fg;
     padding: 12;
 }
@@ -70,7 +75,7 @@ mainbox{
 }
 
 prompt {
-    background-color: @bg-alt;
+    background-color: @amarillo;
     enabled: true;
     padding: 12 0 0 12;
     text-color: @fg;

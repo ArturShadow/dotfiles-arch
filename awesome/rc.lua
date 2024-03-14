@@ -8,7 +8,7 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
--- Theme handling library
+-- Theme handling library11
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
@@ -635,18 +635,20 @@ clientkeys =
         {description = "Open opera"}
     ),
     awful.key(
-        {alt}, "space",
+        {alt},
+        "space",
         function()
             awful.util.spawn("rofi -show drun")
-        end ,
-        {description = "Open rofi on drun mode"}),
-    
-    awful.key({modkey}, "c",
-        function (  )
+        end,
+        {description = "Open rofi on drun mode"}
+    ),
+    awful.key(
+        {modkey},
+        "c",
+        function()
             awful.util.spawn(editor)
         end
     )
-    
 )
 
 -- Bind all key numbers to tags.
@@ -901,3 +903,4 @@ client.connect_signal(
     end
 )
 -- }}}
+awful.spawn.with_shell(os.getenv("HOME") .. "/.config/awesome/autorun.sh")
