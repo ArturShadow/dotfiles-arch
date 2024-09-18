@@ -11,25 +11,20 @@ configuration {
 @theme "/dev/null"
 
 * {
-    color1: #BF4594;
-    color2: #F079f2;
-    moradito: #2E2259;
-    azul-fuerte: rgba(15, 10, 42, 0.02);
-    amarillo: #F2CB9B;
-    bg:#11121D;
-    bg-alt: #444b6a;
+    colorPrmary: #2e2259;
+    colorSecondary: #152c40ff;
+    colorTerciary: #0d0d0d90;
 
     fg: #ffffff;
     fg-alt: #787c99;
 
-    background-color: @azul-fuerte;
+    background-color: @colorTerciary;
 
     border: 0;
     margin: 0;
     padding: 0;
     spacing: 0;
 }
-
 window {
     width:45%;
 }
@@ -54,9 +49,9 @@ element-icon {
 }
 
 entry {
-    background-color: @moradito;
+    background-color: @colorSecondary;
     text-color:@fg;
-    padding: 12;
+    padding: 12; 
 }
 
 inputbar {
