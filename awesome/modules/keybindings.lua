@@ -298,11 +298,11 @@ clientkeys =
         {description = "Open opera", group = "launcher"}
     ),
     awful.key(
-        {"Mod1"},
+        {alt},
         "Space",
         function()
             print("Algo")
-            -- awful.util.spawn.with_terminal("rofi -modi drun -show drun")
+            awful.util.spawn.with_terminal("rofi -modi drun -show drun")
         end,
         {description = "Open rofi on drun mode", group = "launcher"}
     ),
