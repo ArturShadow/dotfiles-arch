@@ -8,10 +8,12 @@ local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
+print(themes_path)
 
 local theme = {}
 
-theme.font = "sans 12"
+theme.font = "Hack Nerd Font 17"
+
 
 theme.bg_normal = "#000000"
 theme.bg_focus = "#ff0000"
@@ -47,6 +49,9 @@ theme.border_marked = "#91231c"
 local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
+theme.taglist_font = "Hack Nerd Font 18"
+
+
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -92,7 +97,6 @@ theme.titlebar_maximized_button_normal_inactive = themes_path .. "default/titleb
 theme.titlebar_maximized_button_focus_inactive = themes_path .. "default/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_active = themes_path .. "default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/maximized_focus_active.png"
-
 theme.wallpaper = "/home/kurobon/.config/awesome/background/background3.jpg"
 
 -- You can use your own layout icons like this:
@@ -106,6 +110,7 @@ theme.layout_tilebottom = themes_path .. "default/layouts/tilebottomw.png"
 theme.layout_tileleft = themes_path .. "default/layouts/tileleftw.png"
 theme.layout_tile = themes_path .. "default/layouts/tilew.png"
 theme.layout_tiletop = themes_path .. "default/layouts/tiletopw.png"
+-- notification_font
 theme.layout_spiral = themes_path .. "default/layouts/spiralw.png"
 theme.layout_dwindle = themes_path .. "default/layouts/dwindlew.png"
 theme.layout_cornernw = themes_path .. "default/layouts/cornernww.png"
@@ -117,9 +122,9 @@ theme.layout_cornerse = themes_path .. "default/layouts/cornersew.png"
 theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
 
 -- Define the icon theme for application icons. If not set then the icons
--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
-
-return theme
+    -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
+    theme.icon_theme = nil
+    
+    return theme
 
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
