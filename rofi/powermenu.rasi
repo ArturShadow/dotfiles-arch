@@ -1,0 +1,66 @@
+configuration {
+    show-icons: false;   // para que use solo Nerd Font o texto
+}
+
+* {
+    bg: #1e1e2e;
+    fg: #cdd6f4;
+    accent: #89b4fa;
+    font: "CaskaydiaCove Nerd Font 20";
+}
+
+window {
+    width: 35%;
+    background-color: @bg;
+    border: 2px;
+    border-color: @accent;
+    opacity: 0.5;
+}
+
+prompt {
+    text-color: transparent;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+inputbar {
+    padding: 0;
+    margin: 0;
+    spacing: 0;
+    background-color: transparent;
+}
+
+entry {
+    background-color: transparent;
+    text-color: transparent;
+}
+
+listview {
+    columns: 3;
+    lines: 2;
+    spacing: 15;
+    background-color: @bg;
+    fixed-height: false;
+}
+
+element {
+    padding: 20;
+    background-color: transparent;
+    text-color: @fg;
+    vertical-align: 0.5;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: #ffffff; // oculta texto, solo icono visible
+}
+
+element-icon {
+    background-color: transparent;
+}
