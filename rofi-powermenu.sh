@@ -12,3 +12,5 @@ case "$chosen" in
 esac
 
 # Move to  .local/bin and chmod +x .local/bin/rofi-powermenu.sh
+
+=
