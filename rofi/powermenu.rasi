@@ -1,66 +1,77 @@
 configuration {
-    show-icons: false;   // para que use solo Nerd Font o texto
+    show-icons: false; // Desactiva iconos externos, solo usa Nerd Font (íconos del texto)
 }
 
+/* VARIABLES GLOBALES */
 * {
-    bg: #1e1e2e;
-    fg: #cdd6f4;
-    accent: #89b4fa;
-    font: "CaskaydiaCove Nerd Font 20";
-}
-
-window {
-    width: 35%;
+    bg: #1e1e2e;         // Color de fondo
+    fg: #cdd6f4;         // Color de texto normal
+    accent: #89b4fa;     // Color para el seleccionado y bordes
+    font: "CaskaydiaCove Nerd Font 50";  // Fuente con Nerd Glyphs
     background-color: @bg;
-    border: 2px;
-    border-color: @accent;
-    opacity: 0.5;
 }
 
+/* CONFIGURACIÓN DE LA VENTANA */
+window {
+    width: 25%;              // Porcentaje del ancho de pantalla
+    background-color: @bg;
+    border: 2px;              // Grosor del borde
+    border-color: @accent;    // Color del borde
+    opacity: 0.5;             // Transparencia de la ventana
+}
+
+/* BARRA DEL PROMPT (oculta porque no muestra texto) */
 prompt {
     text-color: transparent;
-    background-color: transparent;
+    background-color: @bg;
     padding: 0;
     margin: 0;
 }
 
+/* INPUTBAR (donde escribirías) */
 inputbar {
     padding: 0;
     margin: 0;
     spacing: 0;
-    background-color: transparent;
-}
-
-entry {
-    background-color: transparent;
-    text-color: transparent;
-}
-
-listview {
-    columns: 3;
-    lines: 2;
-    spacing: 15;
     background-color: @bg;
-    fixed-height: false;
 }
 
+/* ENTRY (donde aparece lo que escribes) */
+entry {
+    background-color: @bg;
+    text-color: transparent;  // Para ocultar el texto
+}
+
+/* LISTA DE OPCIONES (el grid) */
+listview {
+    columns: 3;          // Columnas del grid
+    lines: 2;            // Filas
+    spacing: 5;          // Espacio entre celdas
+    background-color: @bg;
+    fixed-height: false; // Ajusta la altura según contenido
+}
+
+/* ELEMENTOS DEL GRID (cada opción individual) */
 element {
-    padding: 20;
+    padding: 0;
+    margin: 0;
     background-color: transparent;
-    text-color: @fg;
-    vertical-align: 0.5;
 }
-
+/* ELEMENTO SELECCIONADO (hover o flechas) */
 element selected {
-    background-color: @accent;
-    text-color: @bg;
+    background-color: @accent; // Fondo azulito
+    text-color: @bg;           // Texto invertido
 }
 
+/* TEXTO DENTRO DEL ELEMENTO (oculto para mostrar solo icono) */
 element-text {
+    horizontal-align: 0.5;
     background-color: transparent;
-    text-color: #ffffff; // oculta texto, solo icono visible
+    text-color: #ffffff;
 }
 
+/* ICONO DENTRO DEL ELEMENTO (si se usaran iconos externos) */
 element-icon {
-    background-color: transparent;
+    size: 32;              // tamaño exacto del icono
+    horizontal-align: 0.5; // centrar
 }
