@@ -1,7 +1,0 @@
-configuration {
-    font: "CaskaydiaCove Nerd Font 12";
-    show-icons: true;
-    icon-theme: "Papirus";
-}
-
-@theme "~/.config/rofi/theme.rasi"

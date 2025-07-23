@@ -64,8 +64,8 @@ echo "🚀 Instalando rofi-power-menu..."
 sudo aura -A --noconfirm rofi-power-menu
 
 # Copiar configuraciones personalizadas
-echo "🚀 Copiando configuraciones desde $(pwd)/copy-config a $HOME/.config"
-cp -rf "$(pwd)/copy-config" "$HOME/.config"
+echo "🚀 Copiando configuraciones desde $(pwd)/.config/copy a $HOME/.config"
+cp -rf "$(pwd)/.config-copy" "$HOME/.config"
 
 # Preparar .local/bin
 DEST="$HOME/.local/bin"
@@ -75,7 +75,7 @@ if [ ! -d "$DEST" ]; then
 fi
 
 # Mover y dar permisos al script personalizado de rofi
-mv "$HOME/.config/copy-config/rofi-powermenu.sh" "$DEST/"
+mv "$HOME/.config/-copy/rofi-powermenu.sh" "$DEST/"
 chmod +x "$DEST/rofi-powermenu.sh"
 
 # Enlace simbólico para lightdm
@@ -105,4 +105,35 @@ echo "✅ betterlockscreen configurado con $IMAGE_PATH"
 # Habilitar servicios
 sudo systemctl enable lightdm.service
 
-echo "✅ Instalación completa. Reinicia para aplicar los cambios."
+echo "✅ Instalación completa."
+
+echo "Estableciendo el avatar para el greteer [lightdm-gtk-greeter]"
+
+# Crear carpetas necesarias para AccountsService
+echo "📁 Creando carpetas para AccountsService..."
+sudo mkdir -p /var/lib/AccountsService/icons
+sudo mkdir -p /var/lib/AccountsService/users
+
+# Configurar avatar del usuario
+USERNAME="$(whoami)"
+AVATAR_SOURCE="$(pwd)/res/avatar.png"
+AVATAR_DEST="/var/lib/AccountsService/icons/$USERNAME"
+USER_CONFIG="/var/lib/AccountsService/users/$USERNAME"
+
+if [ -f "$AVATAR_SOURCE" ]; then
+    echo "🧑‍🎨 Configurando avatar desde $AVATAR_SOURCE para $USERNAME"
+    sudo cp "$AVATAR_SOURCE" "$AVATAR_DEST"
+    sudo chmod 644 "$AVATAR_DEST"
+
+    # Crear archivo de configuración del usuario
+    sudo tee "$USER_CONFIG" > /dev/null <<EOF
+[User]
+Icon=$AVATAR_DEST
+SystemAccount=false
+EOF
+
+    sudo chmod 644 "$USER_CONFIG"
+    echo "✅ Avatar configurado correctamente"
+else
+    echo "⚠️ Avatar no encontrado en $AVATAR_SOURCE. Saltando configuración de avatar."
+fi
