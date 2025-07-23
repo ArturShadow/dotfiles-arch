@@ -1,9 +1,9 @@
 * {
     bg: #1e1e2e;
     bg-alt: #313244;
-    fg: #cdd6f4;
+    fg: #ffffff;
     fg-alt: #a6adc8;
-    accent: #89b4fa;
+    accent: #eb0b0b;
 
     font: "CaskaydiaCove Nerd Font 12";
 }

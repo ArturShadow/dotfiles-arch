@@ -5,8 +5,8 @@ configuration {
 /* VARIABLES GLOBALES */
 * {
     bg: #1e1e2e;         // Color de fondo
-    fg: #cdd6f4;         // Color de texto normal
-    accent: #89b4fa;     // Color para el seleccionado y bordes
+    fg: #ffffff;         // Color de texto normal
+    accent: #eb0b0b;     // Color para el seleccionado y bordes
     font: "CaskaydiaCove Nerd Font 50";  // Fuente con Nerd Glyphs
     background-color: @bg;
 }
