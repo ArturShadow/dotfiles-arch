@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Autorun ejecutado el $(date)" >> /tmp/awesome-autorun.log
+notify-send "Awesome" "autorun.sh se ha ejecutado"
 function run {
     if ! pgrep $1 > /dev/null ;
     then

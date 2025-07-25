@@ -11,6 +11,3 @@ case "$chosen" in
     "󰌾") betterlockscreen -l ;;
 esac
 
-# Move to  .local/bin and chmod +x .local/bin/rofi-powermenu.sh
-
-=

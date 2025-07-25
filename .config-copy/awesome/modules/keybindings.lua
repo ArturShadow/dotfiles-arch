@@ -9,7 +9,7 @@ local alt = "Mod1"
 -- {{{ Key bindings
 globalkeys =
     gears.table.join(
-        awful.key({ modkey }, "h", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
+        awful.key({ modkey }, "F1", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
         awful.key({ modkey }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
         awful.key({ modkey }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
         awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
@@ -203,7 +203,7 @@ globalkeys =
         ),
         awful.key({ alt }, "p",
             function()
-                awful.spawn.with_shell("~/.local/bin/rofi-power-menu.sh")
+                awful.spawn.with_shell("~/.local/bin/rofi-powermenu.sh")
             end,
             { description = "Open power menu grid", group = "launcher" }
         ),
@@ -328,7 +328,6 @@ clientkeys =
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
     for i = 1, 9 do
         globalkeys = gears.table.join(
             globalkeys,
@@ -372,7 +371,6 @@ for i = 1, 9 do
                 { description = "toggle focused client on tag #" .. i, group = "tag" })
         )
     end
-end
 
 clientbuttons =
     gears.table.join(
