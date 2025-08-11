@@ -1,0 +1,4 @@
+[User]
+XSession=awesome
+Icon=/var/lib/AccountsService/icons/kurobon
+SystemAccount=false
