@@ -1,0 +1,33 @@
+/* Tema personalizado para LightDM */
+@define-color bg_color #1e1e2e;
+@define-color fg_color #ffffff;
+@define-color accent_color #eb0b0b;
+
+* {
+  font-family: "CaskaydiaCove Nerd Font";
+  font-size: 19px;
+}
+
+window {
+  background-color: @bg_color;
+  color: @fg_color;
+}
+
+button {
+  background-color: @accent_color;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  padding: 5px 10px;
+}
+
+entry {
+  background-color: #2a2a3a;
+  color: #f0f0f0;
+  border: 1px solid @accent_color;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+
+
